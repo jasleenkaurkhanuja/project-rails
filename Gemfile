@@ -58,7 +58,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # For encoding and decoding JWT tokens
 gem 'jwt', '~> 2.2', '>= 2.2.3'
-
+gem 'dotenv-rails'
 # For JSON API responses
 # gem 'active_model_serializers', '~> 0.10.0'
 gem 'byebug', '~> 11.1', '>= 11.1.3' 
