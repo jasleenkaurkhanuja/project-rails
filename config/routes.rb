@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'files/index'
+  get 'files/create'
+  get 'files/destroy'
+  get 'files/update'
   post '/user/register', to: "user#register"
   post '/user/login', to: "user#login"
   post '/user/logout', to:"user#logout"
