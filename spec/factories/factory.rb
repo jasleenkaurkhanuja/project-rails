@@ -1,3 +1,4 @@
+require 'rack/test'
 FactoryBot.define do 
     factory :user do 
         name { Faker::Internet.unique.username }
@@ -9,5 +10,13 @@ FactoryBot.define do
         title { Faker::Lorem.sentence }
         details { Faker::Lorem.paragraph }
         status { %w[pending in_progress completed] }
+    end
+
+    factory :attachment do 
+        association :user
+
+        title { Faker::Lorem.sentence }
+        body { Faker::Lorem.paragraph }
+        file {Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, 'spec', 'uploads', 'example.pdf')), 'application/pdf')}
     end
 end

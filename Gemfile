@@ -4,7 +4,7 @@ ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
-
+gem 'rack-test'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -55,7 +55,8 @@ gem 'httparty'
 
 # For handling user passwords securely
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'active_model_serializers'
+gem 'simplecov'
 # For encoding and decoding JWT tokens
 gem 'jwt', '~> 2.2', '>= 2.2.3'
 gem 'dotenv-rails'

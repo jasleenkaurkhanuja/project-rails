@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-  skip_before_action :authenticate_user, only: [:register, :login, :index]
+  skip_before_action :authenticate_user, only: [:register, :login]
 
   def index 
     @users = User.all 
@@ -8,7 +8,7 @@ class UserController < ApplicationController
   def register
     @user = User.create(user_params)
     if @user.save 
-      render json: @user, status: :created 
+      render json: {name: @user.name, email: @user.email}, status: :created 
     else 
       render json: @user.errors.full_messages, status: :unprocessable_entity
     end

@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 
     private 
     def authenticate_user 
-        token = request.headers['Authorization']&.split(' ')
+        token = request.headers['Authorization']&.split(' ').last
         decoded_token = JsonWebToken.decode(token)
+        
         if decoded_token 
             @current_user = User.find_by(id: decoded_token[:user_id])
         else 

@@ -13,9 +13,9 @@ RSpec.describe "User", type: :request do
                     {
                         user:
                         {
-                            name: my_user.name,
-                            email: my_user.email,
-                            password: my_user.password
+                            name:my_user.name,
+                            email:my_user.email,
+                            password:my_user.password
                         }
                     }
                 end
